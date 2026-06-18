@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Клавирон — подбор клавишных инструментов</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>🎹 Клавирон</h1>
+      <p class="hero-sub">Подберём клавишный инструмент под вашу цель и бюджет за 1 минуту</p>
+      <button class="btn-primary" onclick="startQuiz()">Начать подбор</button>
+    </div>
+  </header>
+
+  <section id="quiz" class="hidden">
+    <div class="container">
+      <div id="quiz-steps"></div>
+    </div>
+  </section>
+
+  <section id="result" class="hidden">
+    <div class="container">
+      <h2 id="result-title">Ваши инструменты</h2>
+      <div id="result-cards"></div>
+      <div id="paywall" class="hidden">
+        <div class="paywall-box">
+          <h3>Получить полный список</h3>
+          <p>Выберите тариф и получите все подобранные модели с ценами и ссылками</p>
+          <div class="plans">
+            <div class="plan" onclick="selectPlan('start',490)">
+              <h4>Start</h4>
+              <p>2 модели</p>
+              <strong>490 ₽</strong>
+            </div>
+            <div class="plan featured" onclick="selectPlan('smart',890)">
+              <h4>Smart ⭐</h4>
+              <p>4 модели</p>
+              <strong>890 ₽</strong>
+            </div>
+            <div class="plan" onclick="selectPlan('pro',1490)">
+              <h4>Pro</h4>
+              <p>6 моделей</p>
+              <strong>1490 ₽</strong>
+            </div>
+          </div>
+          <div id="email-form" class="hidden">
+            <input type="email" id="user-email" placeholder="Ваш email" />
+            <button class="btn-primary" onclick="submitOrder()">Получить подборку</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="success" class="hidden">
+    <div class="container">
+      <h2>✅ Готово!</h2>
+      <p>Подборка отправлена на ваш email. Проверьте почту.</p>
+      <button class="btn-secondary" onclick="location.reload()">Подобрать ещё раз</button>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container">
+      <p>© 2026 Клавирон · Подбор музыкальных инструментов</p>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
